@@ -1,0 +1,25 @@
+courses
+	--id
+	--title
+	--board_id
+	--gread_type_id (class)
+	--subject_id
+	--Duration
+	--Price
+	--discount_price
+	--is_free
+	--short_description
+	--description
+	--status
+	--created
+	--modified
+
+chapters
+	--id
+	--course_id
+	--title
+	--video_url
+	--chapter_file
+	--short_description
+	--description
+	--is_free

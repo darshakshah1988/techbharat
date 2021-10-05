@@ -1,0 +1,383 @@
+
+listing_types
+	--id
+	--title (Provider, School, collage, coaching center, vendor)
+	--slug
+	--created
+	--modified
+
+listing_type_categories (if future used then you use this)
+	--id
+	--listing_type_id
+	--title (CBSC school, boarding school, Playgroup)
+	--created
+	--modified
+
+
+categories (it will be use after vendor create products)
+	--id
+	--parent_id
+	--title (stesnary, furniture, electronics)	
+	--created
+	--modified
+
+
+listings
+	--id
+	--admin_user_id
+	--uid
+	--listing_type_id
+	--parent_id (default null and if have branches then this will use)
+	--title: niwai vidhyapith
+	--slug
+	--tag_line
+	--domain_name
+	--registration_no
+	--registration_date
+	--logo
+	--logo_dir 
+	--logo_size
+	--logo_type
+	--banner_image
+	--banner_dir
+	--banner_size
+	--banner_type 
+	--thumb_image
+	--thumb_dir
+	--thumb_size
+	--thumb_type
+	--location_id
+	--address_line_1 
+	--address_line_2
+	--postcode
+	--latitude
+	--longitude
+	--short_description
+	--description
+	--meta_title
+	--meta_keyword
+	--meta_description
+	--view_count
+	--is_featured
+	--is_visable
+	--status
+	--created
+	--modified
+
+
+institution_types
+	--id
+	--title (K-12 School, Higher Education (Colleges), University, Group of Institutions)
+	--created
+	--modified
+
+
+listing_details
+	--id
+	--listing_id
+	--institution_type_id
+	--school_medium
+	--classification (Private, Government)
+	--created
+	--modified
+
+academic_years
+	--id
+	--listing_id
+	--start_date
+	--end_date
+	--academic_year_name (2018-2019)
+	--created
+	--modified
+
+
+roles:
+	--id
+	--listing_type_id 
+	--title  (school: librarian, tramsport head, Payroll team, admission cell)
+	--created
+	--modified
+
+admin_users
+	--id
+	--title
+	--role_id
+	--mobile
+	--email
+	--password
+
+admin_users_roles
+	--id
+	--admin_user_id
+	--listing_role_id
+
+
+student_categories
+	--id
+	--listing_id
+	--title (Staff child,  Financially Weak student, Sibling In Institution)
+	--created
+	--modified
+
+students	
+	--id (sid)
+	--listing_id
+	--title (Mr, Mrs)
+	--first_name
+	--middle_name
+	--last_name
+	--email
+	--dob
+	--gender
+	--blood_group
+	--birth_place
+	--language
+	--religion
+	--location_id
+	--address_line_1 
+	--address_line_2
+	--postcode
+	--mobile
+	--email
+
+
+student_details
+	--id
+	--student_id
+	--admission_no
+	--admission_date
+	--listing_student_category_id
+	--course_id
+	--roll_number
+	--created
+	--modified
+
+
+
+parents
+	--id
+	--student_id
+	--title (Mr, Mrs)
+	--first_name
+	--middle_name
+	--last_name
+	--guardian_type (father, mother, brother, other)
+	--dob
+	--education
+	--occupation
+	--income
+	--email
+	--mobile
+	--alt_mobile
+	--location_id
+	--address_line_1 
+	--address_line_2
+	--postcode
+	--photo
+	--created
+	--modified
+
+teachers
+	--id
+	--title (Mr, Mrs)
+	--first_name
+	--middle_name
+	--last_name
+	--dob
+	--email
+	--mobile
+	--alt_mobile
+	--location_id
+	--address_line_1 
+	--address_line_2
+	--postcode
+	--photo
+	--aboutme
+	--created
+	--modified
+
+	
+testimonials
+	--id
+	--listing_id
+	--name
+	--designation
+	--description
+	--status
+	--created
+	--modified
+
+---------------------------------------------------------------
+
+Courses & Batches
+
+batches  (http://teaching.hp.sandbox.fedena.com/courses/866478/batches/new)
+	--id
+	--title
+	--start_date
+	--end_date
+	--duration_title (March 2019 to March 2020)
+	--academic_year_id
+	--created
+	--modified
+
+
+courses (http://aryan.krishna.sandbox.fedena.com/courses/new)
+	--id
+	--listing_id
+	--parent_id (batches) No need this one 
+	--title
+	--code
+	--grading_type_id
+	--created
+	--modified
+
+
+subjects	(http://hanuman.yadav125350.sandbox.fedena.com/subjects_center)
+	--id
+	--course_id
+	--title
+	--code
+	--max_weekly_classes
+	--credit_hours
+	--is_activity
+	--is_exam
+	--created
+	--modified
+
+subjects_teachers (http://hanuman.yadav125350.sandbox.fedena.com/employee/subject_assignment)
+	--id
+	--subject_id
+	--teacher_id
+
+
+
+
+http://hanuman.yadav125350.sandbox.fedena.com/employee/subject_assignment
+
+Note: we can import subjects in the another classes or batches
+
+---------------------------------------------------------------------------------------------
+
+Timetable:
+
+batch_sets	(http://hanuman.yadav125350.sandbox.fedena.com/class_timing_sets)
+	--id
+	--title  (Default)
+	--created
+	--updated
+
+Note: batch_sets is only group of batch timing
+
+batch_timings	
+	--id
+	--batch_set_id
+	--title (period 1, period 2 etc...)
+	--start_time
+	--end_time
+	--is_break
+	--created
+	--updated
+
+
+batch_weekdays	(http://hanuman.yadav125350.sandbox.fedena.com/weekday)
+	--id
+	--course_id (class/batch)
+	--Weekday
+	--batch_set_id
+	--applicable_from
+	--created
+	--updated
+
+timetables	
+	--id
+	--start_date (Current date and user can update this one)
+	--end_date
+
+	Timetable success message: Timetable structure created from 01 July 2021 - 31 October 2021 
+
+	Note: Another timetable exists within the selected date range. Timetable dates cannot overlap.
+
+
+
+
+
+
+medias
+	--id
+	--listing_id
+	--media_type  enum('banner', 'gallery', 'video', 'download')
+	--title
+	--status
+	--position
+	--created
+	--modified
+
+media_files
+	--id
+	--media_id
+	--title
+	--description
+	--external_link
+	--media_image
+	--media_image_dir
+	--media_image_size
+	--media_image_type
+	--position
+	--created
+	--modified
+
+
+leads
+	--id
+	--listing_id
+	--listing_type_id
+	--full_name
+	--subject
+	--email
+	--mobile
+	--description
+	--assign_user_id
+	--lead_status (pending, intersted, not intersted, un reachable, converted)
+	--
+
+
+
+
+composer create-project --prefer-dist cakephp/app:4.* eduhub
+
+
+sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/ani.eduhub.in.conf
+
+sudo nano /etc/apache2/sites-available/ani.eduhub.in.conf
+
+   ServerAdmin webmaster@localhost
+   ServerName ani.eduhub.in
+   ServerAlias www.ani.eduhub.in
+   DocumentRoot /var/www/html/education/eduhub
+
+sudo a2ensite ani.eduhub.in
+
+sudo nano /etc/hosts
+
+127.0.0.1       ani.eduhub.in
+
+
+
+Search on connection manager
+Add prospacts:
+note: free text box
+
+Borrow enity add new one in case on mortgage
+change partner 1 & relationmanager like advisan & admin
+
+Label: loan amount
+
+
+Fact find:
+
+Regarding your below point under opportunity manager, this extra dropdown option should say unincorporated partnership, this is where we’ll be given the option to add two individuals details.
+
+1. 
+
+borroing_unincorporated
